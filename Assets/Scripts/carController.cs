@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class carController : MonoBehaviour {
 
@@ -20,13 +21,13 @@ public class carController : MonoBehaviour {
     void Start () {
         // transform.position is the current position of the car
         position = transform.position;
-		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
         // Increment the horizontal position by whatever values we get 
+		move();
         position.x += Input.GetAxis("Horizontal") * carSpeed * Time.deltaTime;
 
         // Horizontal position will only be limited to -2.2f and 2.2f
@@ -43,4 +44,8 @@ public class carController : MonoBehaviour {
             am.mainBg.Stop();
         }
     }
+
+	public void move(){
+		position.x += CrossPlatformInputManager.GetAxis("Horizontal") * carSpeed * Time.deltaTime;
+	}
 }

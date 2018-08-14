@@ -8,24 +8,32 @@ public class uiManager : MonoBehaviour {
 
     public Button[] buttons;
     public Text scoreText;
-    public Text countdownText;
-    public int timeLeft = 0;
+    //public Text countdownText;
+	public GameObject gameOverScreen;
+	public GameObject instructions;
+	public Text highscore, yourscore, hslabel;
+    //public int timeLeft = 0;
     bool gameOver;
     int score;
+	int hs;
 
     // Use this for initialization
     void Start() {
         gameOver = false;
         score = 0;
-        InvokeRepeating("scoreUpdate", 1.0f, 0.5f);
-        StartCoroutine("TimeUpdate");
+        InvokeRepeating("scoreUpdate", .01f, 0.1f);
+        //StartCoroutine("TimeUpdate");
+		if (SceneManager.GetActiveScene ().name == "Level 1") {
+			Pause();
+			instructions.SetActive (true);
+		}
     }
 
     // Update is called once per frame
     void Update() {
-        scoreText.text = "Score: " + score;
-        countdownText.text = "" + timeLeft;
-        if (timeLeft <= 0 || gameOver)
+		scoreText.text = score.ToString();
+        //countdownText.text = "" + timeLeft;
+        if (/*timeLeft <= 0 ||*/ gameOver)
         {
             gameOverActivated(false);
         }
@@ -34,35 +42,35 @@ public class uiManager : MonoBehaviour {
     void scoreUpdate()
     {
         if (!gameOver) {
-            score += 10;
+            score += 1;
         }
     }
 
-    IEnumerator TimeUpdate()
+    /*IEnumerator TimeUpdate()
     {
         while (!gameOver)
         {
             yield return new WaitForSeconds(1);
             timeLeft--;
         }
-    }
+    }*/
 
     public void gameOverActivated(bool hasCollided)
     {
         gameOver = true;
-        foreach(Button button in buttons)
-        {
-            button.gameObject.SetActive(true);
-        }
-        StopCoroutine("TimeUpdate");
-        if (hasCollided)
-        {
-            countdownText.text = "Game Over!";
-        }
-        else
-        {
-            countdownText.text = "Time's Up!";
-        }
+		Pause();
+		gameOverScreen.SetActive (true);
+		hs = PlayerPrefs.GetInt ("highscore");
+		if(hs != 0 || hs != null){
+			if (score > hs) {
+				highscore.text = score.ToString();
+				PlayerPrefs.SetInt ("highscore", score);
+				hslabel.text = "NEW HIGH SCORE!";
+			} else {
+				highscore.text = hs.ToString();
+			}
+		}
+		yourscore.text = score.ToString ();
     }
 
     public void Play() {
@@ -71,14 +79,12 @@ public class uiManager : MonoBehaviour {
     }
 
     public void Pause() {
-        if (Time.timeScale == 1)
-        {
-            Time.timeScale = 0;
-        }
-        else if (Time.timeScale == 0) {
-            Time.timeScale = 1;
-        }
+       Time.timeScale = 0;
     }
+
+	public void Unpause(){
+		Time.timeScale = 1;
+	}
 
     public void Menu() {
         SceneManager.LoadScene("Menu");
@@ -88,5 +94,10 @@ public class uiManager : MonoBehaviour {
     {
         Application.Quit();
     }
+
+	public void okInstructions(){
+		Unpause();
+		instructions.SetActive (false);
+	}
 }
 
