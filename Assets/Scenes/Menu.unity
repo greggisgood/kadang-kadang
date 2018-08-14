@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -241,10 +241,10 @@ RectTransform:
   m_Father: {fileID: 291325662}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.34, y: -67}
-  m_SizeDelta: {x: -50.899994, y: -299.9}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 23, y: 406}
+  m_SizeDelta: {x: 642, y: 239.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &324524344
 MonoBehaviour:
@@ -428,8 +428,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttons: []
   scoreText: {fileID: 0}
-  countdownText: {fileID: 0}
   gameOverScreen: {fileID: 0}
+  instructions: {fileID: 0}
+  highscore: {fileID: 0}
+  yourscore: {fileID: 0}
+  hslabel: {fileID: 0}
 --- !u!4 &408837495
 Transform:
   m_ObjectHideFlags: 0
@@ -888,8 +891,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 90, y: 158}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: 318, y: 559.7622}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1874390009
 MonoBehaviour:
