@@ -38,7 +38,7 @@ public class carController : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Boulder") {
+        if (col.gameObject.tag == "Puddle") {
             Destroy(gameObject);
             ui.gameOverActivated(true);
             am.mainBg.Stop();

@@ -16,7 +16,7 @@ public class obstacleDestroyer : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Boulder")
+        if (collision.gameObject.tag == "Puddle")
         {
             Destroy(collision.gameObject);
         }
