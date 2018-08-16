@@ -10,8 +10,9 @@ public class uiManager : MonoBehaviour {
     public Text scoreText;
     //public Text countdownText;
 	public GameObject gameOverScreen;
-	public GameObject instructions;
+	public GameObject instructions, pauseScreen;
 	public Text highscore, yourscore, hslabel;
+	public Animation anim;
     //public int timeLeft = 0;
     bool gameOver;
     int score;
@@ -98,6 +99,16 @@ public class uiManager : MonoBehaviour {
 	public void okInstructions(){
 		Unpause();
 		instructions.SetActive (false);
+	}
+
+	public void inGamePause(){
+		Pause ();
+		pauseScreen.SetActive(true);
+	}
+
+	public void inGameUnpause(){
+		Unpause ();
+		pauseScreen.SetActive(false);
 	}
 }
 

@@ -7,7 +7,7 @@ public class obstacleSpawner : MonoBehaviour {
     int obstacleNo;
     public float maxPos = 2.2f;
     public float delayTimer = 0.5f;
-    float timer;
+    float timer;	
    
 
 	// Use this for initialization
@@ -21,7 +21,7 @@ public class obstacleSpawner : MonoBehaviour {
         if (timer <= 0)
         {
             Vector3 obstaclePos = new Vector3(Random.Range(-2.2f, 2.2f), transform.position.y, transform.position.z);
-            obstacleNo = Random.Range(0, 2);
+			obstacleNo = Random.Range(0, obstacles.Length);
             Instantiate(obstacles[obstacleNo], obstaclePos, transform.rotation);
             timer = delayTimer;
         }
