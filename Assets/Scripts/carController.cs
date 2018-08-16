@@ -6,7 +6,7 @@ using UnityStandardAssets.CrossPlatformInput;
 public class carController : MonoBehaviour {
 
     public float carSpeed;
-    public float maxPos = 2.2f; // This is the maximum horizontal distance the car can go
+    public float maxPos; // This is the maximum horizontal distance the car can go
 
     Vector3 position;
     public uiManager ui;
@@ -33,7 +33,7 @@ public class carController : MonoBehaviour {
         position.x += Input.GetAxis("Horizontal") * carSpeed * Time.deltaTime;
 
         // Horizontal position will only be limited to -2.2f and 2.2f
-        position.x = Mathf.Clamp(position.x, -2.2f, 2.2f);
+        position.x = Mathf.Clamp(position.x, (-1*maxPos), maxPos);
 
         transform.position = position;
 	}
