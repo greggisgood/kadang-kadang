@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114449238526289454}
   m_Layer: 0
   m_Name: Obstacle 2
-  m_TagString: Boulder
+  m_TagString: Puddle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class obstacleMove : MonoBehaviour {
-    public float speed = 8f;
+    public float speed;
 
 	// Use this for initialization
 	void Start () {

@@ -23,7 +23,6 @@ public class uiManager : MonoBehaviour {
         gameOver = false;
         score = 0;
         InvokeRepeating("scoreUpdate", .01f, 0.1f);
-        //StartCoroutine("TimeUpdate");
 		if (SceneManager.GetActiveScene ().name == "Level 1") {
 			Pause();
 			instructions.SetActive (true);
@@ -47,14 +46,10 @@ public class uiManager : MonoBehaviour {
         }
     }
 
-    /*IEnumerator TimeUpdate()
+    public void stopScoreUpdate()
     {
-        while (!gameOver)
-        {
-            yield return new WaitForSeconds(1);
-            timeLeft--;
-        }
-    }*/
+        CancelInvoke("scoreUpdate");
+    }
 
     public void gameOverActivated(bool hasCollided)
     {

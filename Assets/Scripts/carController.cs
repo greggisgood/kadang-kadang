@@ -11,6 +11,7 @@ public class carController : MonoBehaviour {
     Vector3 position;
     public uiManager ui;
     public audioManager am;
+    SpriteRenderer rend;
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class carController : MonoBehaviour {
     void Start () {
         // transform.position is the current position of the car
         position = transform.position;
+        rend = GetComponent<SpriteRenderer>();
 	}
 	
 	// Update is called once per frame
@@ -36,12 +38,34 @@ public class carController : MonoBehaviour {
         transform.position = position;
 	}
 
+    IEnumerator FadeOut()
+    {
+        for (float f = 1f; f >= -0.05f; f -= 0.05f)
+        {
+            Color c = rend.material.color;
+            c.a = f;
+            rend.material.color = c;
+            yield return new WaitForSeconds(0.05f);
+        }
+        ui.gameOverActivated(true);
+        am.mainBg.Stop();
+    }
+
+    public void startFading()
+    {
+        StartCoroutine("FadeOut");
+    }
+
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Boulder") {
-            Destroy(gameObject);
-            ui.gameOverActivated(true);
-            am.mainBg.Stop();
+        if (col.gameObject.tag == "Puddle") {
+            ui.stopScoreUpdate();
+            Destroy(col.gameObject);
+            startFading();
+        
+            //Destroy(gameObject);
+            //ui.gameOverActivated(true);
+            //am.mainBg.Stop();
         }
     }
 
