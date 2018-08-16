@@ -53,6 +53,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\audioManager.cs" />
      <Compile Include="Assets\Scripts\carController.cs" />
+     <Compile Include="Assets\Scripts\loadSplash.cs" />
      <Compile Include="Assets\Scripts\obstacleDestroyer.cs" />
      <Compile Include="Assets\Scripts\obstacleMove.cs" />
      <Compile Include="Assets\Scripts\obstacleSpawner.cs" />
