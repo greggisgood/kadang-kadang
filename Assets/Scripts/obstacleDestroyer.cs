@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class obstacleDestroyer : MonoBehaviour {
 
@@ -16,7 +14,7 @@ public class obstacleDestroyer : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Boulder")
+        if (collision.gameObject.tag == "Boulder" || collision.gameObject.tag == "Puddle")
         {
             Destroy(collision.gameObject);
         }

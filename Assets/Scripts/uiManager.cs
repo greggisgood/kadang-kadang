@@ -47,6 +47,11 @@ public class uiManager : MonoBehaviour {
         }
     }
 
+    public void stopScoreUpdate()
+    {
+        CancelInvoke("scoreUpdate");
+    }
+
     /*IEnumerator TimeUpdate()
     {
         while (!gameOver)

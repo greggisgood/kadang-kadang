@@ -5,11 +5,10 @@ using UnityEngine;
 public class obstacleSpawner : MonoBehaviour {
     public GameObject[] obstacles;
     int obstacleNo;
-    public float maxPos = 2.2f;
-    public float delayTimer = 0.5f;
+    public float maxPos;
+    public float delayTimer;
     float timer;	
    
-
 	// Use this for initialization
 	void Start () {
         timer = delayTimer;
@@ -20,9 +19,13 @@ public class obstacleSpawner : MonoBehaviour {
         timer -= Time.deltaTime;
         if (timer <= 0)
         {
-            Vector3 obstaclePos = new Vector3(Random.Range(-2.2f, 2.2f), transform.position.y, transform.position.z);
+            Vector3 obstaclePos = new Vector3(Random.Range((-1 * maxPos),  maxPos), transform.position.y, transform.position.z);
 			obstacleNo = Random.Range(0, obstacles.Length);
             Instantiate(obstacles[obstacleNo], obstaclePos, transform.rotation);
+            if (delayTimer > 0.6f)
+            {
+                delayTimer -= 0.15f;
+            }
             timer = delayTimer;
         }
         
