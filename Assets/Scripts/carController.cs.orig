@@ -51,6 +51,7 @@ public class carController : MonoBehaviour {
         am.mainBg.Stop();
     }
 
+<<<<<<< HEAD
     public void startFading()
     {
         StartCoroutine("FadeOut");
@@ -58,11 +59,21 @@ public class carController : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "obstacle") {
+        if (col.gameObject.tag == "Puddle") {
             ui.stopScoreUpdate();
-            //Destroy(col.gameObject);
+            Destroy(col.gameObject);
             startFading();
         
+=======
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Boulder" || col.gameObject.tag == "Puddle")
+        {
+            ui.stopScoreUpdate();
+            Destroy(col.gameObject);
+            StartCoroutine("FadeOut");
+
+>>>>>>> d80938c918845cf1449603f379d0575c659bed38
             //Destroy(gameObject);
             //ui.gameOverActivated(true);
             //am.mainBg.Stop();

@@ -1,0 +1,26 @@
+﻿using UnityEngine;
+
+public class obstacleDestroyer : MonoBehaviour {
+
+	// Use this for initialization
+	void Start () {
+		
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+<<<<<<< HEAD
+        if (collision.gameObject.tag == "Puddle")
+=======
+        if (collision.gameObject.tag == "Boulder" || collision.gameObject.tag == "Puddle")
+>>>>>>> d80938c918845cf1449603f379d0575c659bed38
+        {
+            Destroy(collision.gameObject);
+        }
+    }
+}

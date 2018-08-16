@@ -29,8 +29,5 @@ public class obstacleSpawner : MonoBehaviour {
 			timer = delayTimer;
 		}
 	}
-            timer = delayTimer;
-        }
-        
-    }
+           
 }

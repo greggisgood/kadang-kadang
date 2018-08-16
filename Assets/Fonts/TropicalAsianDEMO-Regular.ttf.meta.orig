@@ -1,0 +1,31 @@
+fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 11ebb0111fe3f9944b7ee001cd0a6f2a
+timeCreated: 1534231222
+licenseType: Free
+=======
+guid: 5975016db36c0594aad7710edaf91543
+>>>>>>> origin/gregg
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Tropical Asian DEMO
+  fontNames:
+  - Tropical Asian DEMO
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+<<<<<<< HEAD
+=======
+  shouldRoundAdvanceValue: 1
+>>>>>>> origin/gregg
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

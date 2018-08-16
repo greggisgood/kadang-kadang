@@ -1,0 +1,31 @@
+fileFormatVersion: 2
+<<<<<<< HEAD
+guid: c843f87b71b54864da0812c9166c3ce6
+timeCreated: 1534225803
+licenseType: Free
+=======
+guid: 809d64a9183c27440a33cb9d44fc7fe6
+>>>>>>> origin/gregg
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Bad Unicorn DEMO
+  fontNames:
+  - Bad Unicorn DEMO
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+<<<<<<< HEAD
+=======
+  shouldRoundAdvanceValue: 1
+>>>>>>> origin/gregg
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
